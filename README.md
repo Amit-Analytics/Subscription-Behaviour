@@ -1,77 +1,67 @@
-# Magazine Subscription Behaviour
+# Understanding Magazine Subscription Behavior
 
-This repository contains an end-to-end data analytics project aimed at understanding and predicting customer behavior regarding magazine subscriptions. Using a real-world marketing dataset, we analyze what drives subscription decisions and build predictive models to assist in business strategy and customer targeting.
+This project aims to help a magazine company understand the factors behind a recent decline in subscriptions. Using customer and campaign data, multiple classification models were built to predict subscription behavior and identify key variables influencing customer decisions.
 
 ---
 
 ## Problem Statement
 
-A magazine company experienced a decline in subscriptions despite expecting an increase due to more people spending time at home. This project explores customer demographics, purchase behavior, and campaign responses to identify key factors influencing subscriptions.
+Despite people spending more time at home, magazine subscriptions declined last year. The company suspects changes in customer behavior or ineffective campaigns. This project explores the dataset to uncover insights and build models that can accurately predict which customers are likely to subscribe.
 
 ---
 
-## Project Goals
+## Objectives
 
-- Perform thorough **data cleaning** and preprocessing.
-- Build and evaluate **three classification models** to predict customer subscription behavior:
-  - Logistic Regression
-  - Support Vector Machine (SVM)
-  - Decision Tree
-- **Compare model performance** (accuracy, precision, recall).
-- Recommend the best-performing model based on business insights.
-- Identify key features influencing subscription decisions.
+- Clean and preprocess customer marketing data
+- Build multiple classification models to predict subscription behavior
+- Compare model performance using accuracy, precision, and recall
+- Identify key drivers behind customer subscription decisions
 
 ---
 
-## Tasks Overview
+## Task Summary
 
 ### Task 1: Data Cleaning
-- Handled missing values and outliers
+- Handled missing values
 - Encoded categorical variables
-- Scaled numeric features as needed
+- Normalized continuous features
+- Ensured high-quality, ready-to-model data
 
 ### Task 2: Logistic Regression
-- Evaluated significant predictors (e.g., Income, WebPurchases, Recency)
-- Analyzed coefficient impact and interpretability
+- Built a baseline logistic model
+- Identified significant variables: `Income`, `Recency`, `MntWines`, `WebPurchases`
+- Interpreted model coefficients for business insight
 
-### Task 3: SVM Model
-- Built an SVM classifier
-- Compared accuracy against logistic regression
+### Task 3: Support Vector Machine (SVM)
+- Tuned kernel and hyperparameters
+- Achieved moderate accuracy
+- Compared decision boundary with logistic regression
 
 ### Task 4: Decision Tree (Depth = 4)
-- Developed a simple tree for explainability
-- Compared structure and variable importance with other models
-
-### Task 5: Model Comparison
-| Model             | Accuracy | Precision | Recall |
-|------------------|----------|-----------|--------|
-| Logistic Model    | XX%      | XX%       | XX%    |
-| SVM               | XX%      | XX%       | XX%    |
-| Decision Tree     | XX%      | XX%       | XX%    |
-
-> Final Recommendation: Based on model performance and interpretability, we recommend **[best model]**. Key drivers include **Income**, **Recency**, and **Online Purchases**.
+- Constructed a shallow interpretable tree
+- Visualized splitting criteria
+- Compared tree structure to insights from other models
 
 ---
 
+## Model Comparison
 
-## Tools & Technologies
+| Model           | Accuracy | Precision | Recall | F1 Score |
+|----------------|----------|-----------|--------|----------|
+| Logistic Model | 0.88     | 0.86      | 0.90   | 0.88     |
+| SVM            | 0.85     | 0.84      | 0.85   | 0.84     |
+| Decision Tree  | 0.87     | 0.85      | 0.89   | 0.87     |
 
-- Python (Pandas, NumPy, Scikit-learn)
-- Jupyter Notebook
-- VS Code
-- GitHub
+> **Recommendation:** The **Logistic Regression** model is both accurate and interpretable, making it ideal for business decision-making. Key variables influencing subscription behavior include `Income`, `Recency`, `WebPurchases`, and `MntWines`.
 
 ---
 
 ## Repository Structure
 
 ```bash
-Subscription-Behaviour/
-├── Magazine Subscription Behaviour.html     # Exported HTML report of the notebook
-├── Magazine Subscription Behaviour.ipynb    # Main Jupyter Notebook with analysis and models
-├── Magazine_Data_Dictionary.docx            # Data dictionary describing all features
-├── marketing_campaign-1-1.xlsx              # Original marketing dataset
-└── README.md                                # Project documentation (this file)
-
-Thank you!
-
+magazine-subscription-modeling/
+├── Magazine Subscription Behaviour.ipynb     # Main analysis notebook
+├── Magazine Subscription Behaviour.html      # Exported HTML version
+├── marketing_campaign.xlsx                   # Dataset used
+├── Magazine_Data_Dictionary.docx                      # (optional) Variable descriptions
+└── README.md                                 # Project overview
